@@ -2,8 +2,9 @@ spring:
   profiles:
     active:
     - EN
-#   - dev
-guru:
-  username: ymlUsername
-  password: ymlPassword
-  jdbcUrl: ymlDBUrl
+    - dev
+
+#guru:
+#  username: ymlUsername
+#  password: ymlPassword
+#  jdbcUrl: ymlDBUrl
