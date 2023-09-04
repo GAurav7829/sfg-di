@@ -2,9 +2,11 @@ package com.sfg.di;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
+import com.sfg.di.config.ConstructorConfiguration;
 import com.sfg.di.config.SfgConfiguration;
 import com.sfg.di.controllers.ConstructorInjectedController;
 import com.sfg.di.controllers.I18nController;
@@ -18,6 +20,7 @@ import com.sfg.pets.controller.PetController;
 
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.sfg.di", "com.sfg.pets" })
+@EnableConfigurationProperties
 public class SfgDiApplication {
 
 	public static void main(String[] args) {
@@ -72,5 +75,11 @@ public class SfgDiApplication {
 		System.out.println(sfgConfiguration.getUsername());
 		System.out.println(sfgConfiguration.getPassword());
 		System.out.println(sfgConfiguration.getJdbcUrl());
+		
+		System.out.println("-------------Construction Property Binding Deprecated------------------");
+//		ConstructorConfiguration constructorConfiguration = ctx.getBean(ConstructorConfiguration.class);
+//		System.out.println(constructorConfiguration.getUsername());
+//		System.out.println(constructorConfiguration.getPassword());
+//		System.out.println(constructorConfiguration.getJdbcUrl());
 	}
 }
